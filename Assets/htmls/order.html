@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--CSS Main-->
     <link rel="stylesheet" href="./../styles/styles.css">
+    <script defer src="./../script/script.js"></script>
+
 
 </head>
 
@@ -42,7 +44,9 @@
         <div style="display: flex; flex-direction: row; justify-content: space-around; width: 15%;">
             <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
             <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div>
+                <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span>
+            </div>
         </div>
     </div>
     <div style="padding: 40px;">
@@ -74,8 +78,9 @@
                         in your burger, ramen and pretty much anything.</p>
                 </div><br>
                 <div class="addToCartBuyNowContainer">
-                    <button class="addToCartBuyNow" style="background-color: white;">Add to Cart</button>
-                    <a href="./orderPlaced.html"><button class="addToCartBuyNow bthhover" style="background-color: black; color: white;">Buy now</button></a>
+                    <button class="addToCartBuyNow bthhover" style="background-color: white;">Add to Cart</button>
+                    <a href="./orderPlaced.html"><button class="addToCartBuyNow bthhover"
+                            style="background-color: black; color: white;">Buy now</button></a>
                 </div><br>
                 <div style="display: flex; justify-content: center;">
                     <p><i class="fa-regular fa-heart"></i> &nbsp; WISHLIST</p>
@@ -97,65 +102,71 @@
             <h4>VIDEOS</h4>
             <h4>COMMENTS</h4>
         </div><br><br>
-        <p style="padding: 15px;">Your new cooking BFF! You can add this to virtually everything. Try it on rice, on meat or tofu, in your
-            burger, ramen and pretty much anything. These award winning products will have your taste buds <br>lingering for
-            more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil based
+        <p style="padding: 15px;">Your new cooking BFF! You can add this to virtually everything. Try it on rice, on
+            meat or tofu, in your
+            burger, ramen and pretty much anything. These award winning products will have your taste buds <br>lingering
+            for
+            more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil
+            based
             condiment often eaten with rice in Japan, which can also be used to top chicken, burgers, fish, eggs,
             potatoes, and more.<br> Use it as a marinade or as an ingredient in your own homemade salad dressing, this
             condiment is versatile and we encourage you to experiment.<br> OKAZU gained an initial following at farmers'
             markets in Toronto and has been featured in The Toronto Star, The National Post, Toronto Life, FoodiePages
-            and a winner of the Foodie Pick Awards. <br><br><br><br>HEAT LEVEL: MILD-MEDIUM INGREDIENTS: SUNFLOWER OIL, SESAME OIL,
+            and a winner of the Foodie Pick Awards. <br><br><br><br>HEAT LEVEL: MILD-MEDIUM INGREDIENTS: SUNFLOWER OIL,
+            SESAME OIL,
             GARLIC, MISO PASTE (ORGANIC SOYBEANS, RICE, SALT), TAMARI SOY SAUCE (NON-GMO SOYBEANS, SALT, SUGAR), SUGAR,
-            CHILI POWDER, WHITE<br> SESAME SEEDS<br> CHILI & SPICY OKAZU CONTAINS: SESAME, SOYBEANS. MAY CONTAIN: MUSTARD.<br><br><br> CURRY
-            OKAZU CONTAINS: SESAME, SOYBEANS, MUSTARD. <br><br>INGREDIENTS: PRODUCT SEPARATION IS NORMAL. REFRIGERATE AFTER
+            CHILI POWDER, WHITE<br> SESAME SEEDS<br> CHILI & SPICY OKAZU CONTAINS: SESAME, SOYBEANS. MAY CONTAIN:
+            MUSTARD.<br><br><br> CURRY
+            OKAZU CONTAINS: SESAME, SOYBEANS, MUSTARD. <br><br>INGREDIENTS: PRODUCT SEPARATION IS NORMAL. REFRIGERATE
+            AFTER
             OPENING Made in Toronto, Ontario</p>
 
     </section>
     <div class="footer" style="position: relative;">
-            <table
-                style="position: absolute; left: 170px; top: 40px; width: 400px; border-collapse: separate; border-spacing: 3px;">
-                <tr>
-                    <th style="text-align: left; padding: 3px; color: #0C3322;">LINKS</th>
-                    <th style="text-align: left; padding: 3px; color: #0C3322;">INFORMATION</th>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">About</td>
-                    <td style="padding: 3px; color: #565858;">Terms and Service</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Contact Us</td>
-                    <td style="padding: 3px; color: #565858;">Refund Policy</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Customer Service</td>
-                    <td style="padding: 3px; color: #565858;">Press</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">FAQs</td>
-                    <td style="padding: 3px; color: #565858;"></td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Site Maps</td>
-                    <td style="padding: 3px; color: #565858;"></td>
-                </tr>
-            </table>
-            <div style="position: absolute; right: 30px; top: 130px; width: 45%;">
-                <img src="./../Images/VisaMastercardPay.png" alt="" style="width: 100%;">
-            </div>
+        <table
+            style="position: absolute; left: 170px; top: 40px; width: 400px; border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <th style="text-align: left; padding: 3px; color: #0C3322;">LINKS</th>
+                <th style="text-align: left; padding: 3px; color: #0C3322;">INFORMATION</th>
+            </tr>
+            <tr>
+                <td style="padding: 3px; color: #565858;">About</td>
+                <td style="padding: 3px; color: #565858;">Terms and Service</td>
+            </tr>
+            <tr>
+                <td style="padding: 3px; color: #565858;">Contact Us</td>
+                <td style="padding: 3px; color: #565858;">Refund Policy</td>
+            </tr>
+            <tr>
+                <td style="padding: 3px; color: #565858;">Customer Service</td>
+                <td style="padding: 3px; color: #565858;">Press</td>
+            </tr>
+            <tr>
+                <td style="padding: 3px; color: #565858;">FAQs</td>
+                <td style="padding: 3px; color: #565858;"></td>
+            </tr>
+            <tr>
+                <td style="padding: 3px; color: #565858;">Site Maps</td>
+                <td style="padding: 3px; color: #565858;"></td>
+            </tr>
+        </table>
+        <div style="position: absolute; right: 30px; top: 130px; width: 45%;">
+            <img src="./../Images/VisaMastercardPay.png" alt="" style="width: 100%;">
         </div>
-        <div class="bottomFooter">
-            <div style="background-color: #0C3322;" class="footerIcons">
-                <i class="fa-brands fa-facebook" style="color: white;"></i>
-                <i class="fa-brands fa-twitter" style="color: white;"></i>
-                <i class="fa-brands fa-instagram" style="color: white;"></i>
-                <i class="fa-brands fa-youtube" style="color: white;"></i>
-                <i class="fa-brands fa-pinterest" style="color: white;"></i>
-                <i class="fa-brands fa-linkedin" style="color: white;"></i>
-            </div>
-            <div style="background-color: #0C3322; color: white;" class="footerIcons">
-                &copy; 2021 Abolichi
-            </div>
+    </div>
+    <div class="bottomFooter">
+        <div style="background-color: #0C3322;" class="footerIcons">
+            <i class="fa-brands fa-facebook" style="color: white;"></i>
+            <i class="fa-brands fa-twitter" style="color: white;"></i>
+            <i class="fa-brands fa-instagram" style="color: white;"></i>
+            <i class="fa-brands fa-youtube" style="color: white;"></i>
+            <i class="fa-brands fa-pinterest" style="color: white;"></i>
+            <i class="fa-brands fa-linkedin" style="color: white;"></i>
         </div>
+        <div style="background-color: #0C3322; color: white;" class="footerIcons">
+            &copy; 2021 Abolichi
+        </div>
+    </div>
 </body>
 
 </html>
