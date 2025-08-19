@@ -114,11 +114,24 @@
 }
 .footerIcons{
     width: 50%;
-    height: 5vh;
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+.custom-link {
+  color: black;             
+  text-decoration: none;     
+}
+
+.custom-link:visited {
+  color: black;              
+}
+
+.custom-link:hover {
+  color: rgb(25, 25, 145);               
+}
+
 /*page 1 ends and page 2 begins*/
 .filter{
     width: 99%;
