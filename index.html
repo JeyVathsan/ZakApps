@@ -32,17 +32,17 @@
                 <img src="./Assets/Images/logo.png" alt="" class="logo">
             </div>
             <div class="shopOurStoryRecContact">
-                <div>Shop
+                <div class="grow-hover">Shop
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div>Our Story</div>
-                <div>Receipies</div>
-                <div>Contact</div>
+                <div class="grow-hover">Our Story</div>
+                <div class="grow-hover">Receipies</div>
+                <div class="grow-hover">Contact</div>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: space-around; width: 15%;">
-                <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-magnifying-glass grow-hover" style="color: black;"></i>
+                <i class="fa-regular fa-heart grow-hover"></i>
+                <i class="fa-solid fa-cart-shopping grow-hover"></i>
             </div>
         </div>
         <div class="mainPic">
@@ -56,7 +56,7 @@
                 <h2 style="font-weight: 500;">Nourish</h2><br>
                 <h2 style="font-weight: 500;">Your self with</h2><br>
                 <h2>MISO Goodness</h2><br><br>
-                <button class="shopNow">Shop Now</button>
+                <button class="shopNow grow-hover">Shop Now</button>
                 <p style="margin-top: 20px; color: #3A594C;">Free shipping within the<br> US for orders of $54 or more
                 </p>
             </div>
@@ -105,78 +105,62 @@
                 </h1>
             </div>
         </div>
-        <div class="flex-row" style="justify-content: space-around; padding-top: 10px;">
-            <a href="./Assets/htmls/product.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="Assets/Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./Assets/htmls/product.html" class="custom-link">
-                <div class="flex-column card">
+        
 
-                    <div class="cardImg">
-                        <img src="Assets/Images/jarMarket.png" alt="" style="width: 100%;">
+        <div class="product-row">
+            <a href="./Assets/htmls/product.html" class="product-link">
+                <div class="product-card" data-category="noodles">
+                    <div class="product-img">
+                        <img src="Assets/Images/JARS.png" alt="Crunchy Noodles" />
                     </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
+                    <div class="product-details">
+                        <div>JAR of a dozen</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
                     </div>
                 </div>
             </a>
-            <a href="./Assets/htmls/product.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="Assets/Images/Noodle.png" alt="" style="width: 100%;">
+
+            <a href="./Assets/htmls/product.html" class="product-link">
+                <div class="product-card" data-category="jars">
+                    <div class="product-img">
+                        <img src="Assets/Images/JAR.png" alt="Jar from the market" />
                     </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
+                    <div class="product-details">
+                        <div>Jar from the market</div>
+                        <div>$137.00 <del>177.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./Assets/htmls/product.html" class="product-link">
+                <div class="product-card" data-category="masala">
+                    <div class="product-img">
+                        <img src="Assets/Images/MASALA PIC.png" alt="Masala pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Spicy Masala Mix</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./Assets/htmls/product.html" class="product-link">
+                <div class="product-card" data-category="matcha">
+                    <div class="product-img">
+                        <img src="Assets/Images/ABO MAT CHA.png" alt="Matcha pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Matcha Green Tea</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
                     </div>
                 </div>
             </a>
         </div>
+
     </section>
     <section>
         <br><br>
@@ -249,6 +233,7 @@
 
 
     </section>
+    
 
 </body>
 

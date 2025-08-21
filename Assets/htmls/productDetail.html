@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <link rel="stylesheet" href="./../styles/styles.css"><!---Main CSS---->
-    <link rel="stylesheet" href="./../styles/productDetail.css"><!---Product Detail----->
-    <!--Raleway Font---->
+    <!-- Main CSS - fixed path -->
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <!-- Product Detail CSS - fixed path -->
+    <link rel="stylesheet" href="./../styles/productDetail.css">
+    <!-- Raleway Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght,GRAD@8..144,100..1000,29&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/styles/styles.css">
-    <!----font Awesome----->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -30,7 +31,7 @@
         </div>
         <div class="header-logo">
             <div class="imgdiv">
-                <img src="./../Images/logo.png" alt="" class="logo">
+                <img src="./../Images/logo.png" alt="Company Logo" class="logo">
             </div>
             <div class="shopOurStoryRecContact">
                 <div>Shop
@@ -41,13 +42,13 @@
                 <div>Contact</div>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: space-around; width: 15%;">
-                <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-magnifying-glass" style="color: black;" aria-label="Search"></i>
+                <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
+                <i class="fa-solid fa-cart-shopping" aria-label="Shopping Cart"></i>
             </div>
         </div>
         <div style="width: 100%;">
-            <img src="./../Images/product.png" alt="" style="width: 100%;">
+            <img src="./../Images/product.png" alt="Product banner" style="width: 100%;">
         </div>
         <div>
             <div style="font-weight: 700; padding: 10px;">Products(18)</div>
@@ -56,12 +57,14 @@
             <div class="filter">
                 <div class="filterListMenu">
                     <button class="btnfilter">Filter</button>
-                    <i class="fa-solid fa-table-cells" style="font-size: 25px;"></i>
-                    <i class="fa-solid fa-list-ul" style="font-size: 25px;"></i>
+                    <button id="resetFilters" class="btnfilter" type="button">Reset</button>
+                    <i class="fa-solid fa-table-cells" style="font-size: 25px;" aria-label="Grid view"></i>
+                    <i class="fa-solid fa-list-ul" style="font-size: 25px;" aria-label="List view"></i>
                 </div>
                 <div>
                     Sort By &nbsp; | &nbsp; <div class="dropdown">
-                        <button class="dropbtn">Alphabatically A-Z &nbsp; <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="dropbtn">Alphabatically A-Z &nbsp; <i
+                                class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <a href="#">Latest</a>
                             <a href="#">First</a>
@@ -74,377 +77,264 @@
 
         <!---CheckBox------>
         <div class="container">
-            <div class="filter-group">
+            <!-- Category -->
+            <div class="filter-group" data-key="category">
                 <h3 class="filter-title">Categories</h3>
                 <ul class="options">
-                    <li><label><input type="checkbox"> <span>Chili oil; Okazu</span></label></li>
-                    <li><label><input type="checkbox"> <span>Miso Soup</span></label></li>
-                    <li><label><input type="checkbox"> <span>Instant Matcha</span></label></li>
-                    <li><label><input type="checkbox"> <span>Coffee</span></label></li>
-                    <li><label><input type="checkbox"> <span>Greeting Card</span></label></li>
-                    <li><label><input type="checkbox"> <span>Coming Soon</span></label></li>
+                    <li><label><input type="checkbox" name="category" value="noodles"> <span>Noodles</span></label></li>
+                    <li><label><input type="checkbox" name="category" value="jars"> <span>Jars</span></label></li>
+                    <li><label><input type="checkbox" name="category" value="masala"> <span>Masala</span></label></li>
+                    <li><label><input type="checkbox" name="category" value="matcha"> <span>Matcha</span></label></li>
                 </ul>
             </div>
 
             <!-- Type -->
-            <div class="filter-group">
+            <div class="filter-group" data-key="type">
                 <h3 class="filter-title">Type</h3>
                 <ul class="options">
-                    <li><label><input type="checkbox"> <span>Single Pack</span></label></li>
-                    <li><label><input type="checkbox"> <span>Multi Set</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="single"> <span>Single Pack</span></label></li>
+                    <li><label><input type="checkbox" name="type" value="multi"> <span>Multi Set</span></label></li>
                 </ul>
             </div>
 
             <!-- Flavours -->
-            <div class="filter-group">
+            <div class="filter-group" data-key="flavour">
                 <h3 class="filter-title">Flavours</h3>
                 <ul class="options">
-                    <!-- Add items as needed -->
+                    <li><label><input type="checkbox" name="flavour" value="spicy"> <span>Spicy</span></label></li>
+                    <li><label><input type="checkbox" name="flavour" value="sweet"> <span>Sweet</span></label></li>
+                    <li><label><input type="checkbox" name="flavour" value="savory"> <span>Savory</span></label></li>
                 </ul>
             </div>
+
+            <div style="margin-top:10px; display:flex; gap:8px; align-items:center;">
+                <button id="filterBtn" class="btnfilter">Filter</button>
+                
+            </div>
         </div>
-        <!--check box over---->
+
         <!---Card Starts---->
-        <div class="flex-row" style="justify-content: space-around; padding-top: 10px;">
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
+        <div class="product-row">
+            <a href="./order.html?product=jars" class="product-link">
+                <div class="product-card" data-category="noodles" data-type="multi" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/JARS.png" alt="Crunchy Noodles Jar" />
                     </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
+                    <div class="product-details">
+                        <div>JAR of a dozen</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
                     </div>
                 </div>
             </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/jarMarket.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="flex-row" style="justify-content: space-around; padding-top: 10px;">
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/jarMarket.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="flex-row" style="justify-content: space-around; padding-top: 10px;">
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/jarMarket.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="flex-row" style="justify-content: space-around; padding-top: 10px;">
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/jarMarket.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./order.html" class="custom-link">
-                <div class="flex-column card">
-                    <div class="cardImg">
-                        <img src="./../Images/Noodle.png" alt="" style="width: 100%;">
-                    </div>
-                    <div class="carddetailsDiv">
-                        <div>
-                            Crunchy Noodles for You
-                        </div>
-                        <div>
-                            $127.00<del>167.87</del>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>|32 reviews</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
 
+            <a href="./order.html?product=jar" class="product-link">
+                <div class="product-card" data-category="jars" data-type="single" data-flavour="savory">
+                    <div class="product-img">
+                        <img src="./../Images/JAR.png" alt="Jar from the market" />
+                    </div>
+                    <div class="product-details">
+                        <div>Jar from the market</div>
+                        <div>$137.00 <del>177.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
 
-        <!---Card Ends----->
-        <!---table Starts-->
-        <div class="footer" style="position: relative;">
-            <table
-                style="position: absolute; left: 170px; top: 40px; width: 400px; border-collapse: separate; border-spacing: 3px;">
-                <tr>
-                    <th style="text-align: left; padding: 3px; color: #0C3322;">LINKS</th>
-                    <th style="text-align: left; padding: 3px; color: #0C3322;">INFORMATION</th>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">About</td>
-                    <td style="padding: 3px; color: #565858;">Terms and Service</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Contact Us</td>
-                    <td style="padding: 3px; color: #565858;">Refund Policy</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Customer Service</td>
-                    <td style="padding: 3px; color: #565858;">Press</td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">FAQs</td>
-                    <td style="padding: 3px; color: #565858;"></td>
-                </tr>
-                <tr>
-                    <td style="padding: 3px; color: #565858;">Site Maps</td>
-                    <td style="padding: 3px; color: #565858;"></td>
-                </tr>
-            </table>
-            <div style="position: absolute; right: 30px; top: 130px; width: 45%;">
-                <img src="./../Images/VisaMastercardPay.png" alt="" style="width: 100%;">
-            </div>
+            <a href="./order.html?product=masala" class="product-link">
+                <div class="product-card" data-category="masala" data-type="single" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/MASALA PIC.png" alt="Masala pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Spicy Masala Mix</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./order.html?product=matcha" class="product-link">
+                <div class="product-card" data-category="matcha" data-type="multi" data-flavour="sweet">
+                    <div class="product-img">
+                        <img src="./../Images/ABO MAT CHA.png" alt="Matcha pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Matcha Green Tea</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <!---table ends----->
-        <!---footer Starts----->
-        <div class="bottomFooter">
-            <div style="background-color: #0C3322;;" class="footerIcons">
-                <i class="fa-brands fa-facebook" style="color: white;"></i>
-                <i class="fa-brands fa-twitter" style="color: white;"></i>
-                <i class="fa-brands fa-instagram" style="color: white;"></i>
-                <i class="fa-brands fa-youtube" style="color: white;"></i>
-                <i class="fa-brands fa-pinterest" style="color: white;"></i>
-                <i class="fa-brands fa-linkedin" style="color: white;"></i>
-            </div>
-            <div style="background-color: #0C3322; color: white;" class="footerIcons">
-                &copy; 2021 Abolichi
-            </div>
+        <div class="product-row">
+            <a href="./order.html?product=jars" class="product-link">
+                <div class="product-card" data-category="noodles" data-type="multi" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/JARS.png" alt="Crunchy Noodles Jar" />
+                    </div>
+                    <div class="product-details">
+                        <div>JAR of a dozen</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./order.html?product=jar" class="product-link">
+                <div class="product-card" data-category="jars" data-type="single" data-flavour="savory">
+                    <div class="product-img">
+                        <img src="./../Images/JAR.png" alt="Jar from the market" />
+                    </div>
+                    <div class="product-details">
+                        <div>Jar from the market</div>
+                        <div>$137.00 <del>177.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./order.html?product=masala" class="product-link">
+                <div class="product-card" data-category="masala" data-type="single" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/MASALA PIC.png" alt="Masala pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Spicy Masala Mix</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./order.html?product=matcha" class="product-link">
+                <div class="product-card" data-category="matcha" data-type="multi" data-flavour="sweet">
+                    <div class="product-img">
+                        <img src="./../Images/ABO MAT CHA.png" alt="Matcha pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Matcha Green Tea</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <!---Footer ends---->
+        <div class="product-row">
+            <a href="./order.html?product=jars" class="product-link">
+                <div class="product-card" data-category="noodles" data-type="multi" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/JARS.png" alt="Crunchy Noodles Jar" />
+                    </div>
+                    <div class="product-details">
+                        <div>JAR of a dozen</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
 
+            <a href="./order.html?product=jar" class="product-link">
+                <div class="product-card" data-category="jars" data-type="single" data-flavour="savory">
+                    <div class="product-img">
+                        <img src="./../Images/JAR.png" alt="Jar from the market" />
+                    </div>
+                    <div class="product-details">
+                        <div>Jar from the market</div>
+                        <div>$137.00 <del>177.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
 
+            <a href="./order.html?product=masala" class="product-link">
+                <div class="product-card" data-category="masala" data-type="single" data-flavour="spicy">
+                    <div class="product-img">
+                        <img src="./../Images/MASALA PIC.png" alt="Masala pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Spicy Masala Mix</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./order.html?product=matcha" class="product-link">
+                <div class="product-card" data-category="matcha" data-type="multi" data-flavour="sweet">
+                    <div class="product-img">
+                        <img src="./../Images/ABO MAT CHA.png" alt="Matcha pack" />
+                    </div>
+                    <div class="product-details">
+                        <div>Matcha Green Tea</div>
+                        <div>$127.00 <del>167.87</del></div>
+                        <div class="rating">★★★★★ | 32 reviews</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+
+        <!-- Repeat your other product rows with added data attributes -->
+
+        <!---Footer content remains the same-->
 
     </section>
+
+    <!-- Moved script to end of body -->
+    <script>
+        (function () {
+            const groups = ["category", "type", "flavour"];
+
+            function getSelections() {
+                const selected = {};
+                groups.forEach(g => {
+                    selected[g] = Array.from(document.querySelectorAll(`input[name="${g}"]:checked`))
+                        .map(cb => cb.value);
+                });
+                return selected;
+            }
+
+            function cardMatches(card, selected) {
+                return groups.every(g => {
+                    const picks = selected[g];
+                    if (!picks || picks.length === 0) return true;
+                    const val = card.dataset[g];
+                    return val && picks.includes(val);
+                });
+            }
+
+            function applyFilters() {
+                const selected = getSelections();
+                document.querySelectorAll(".product-card").forEach(card => {
+                    const link = card.closest("a.product-link") || card;
+                    const show = cardMatches(card, selected);
+                    link.style.display = show ? "" : "none";
+                });
+            }
+
+            // Button click
+            const filterBtn = document.getElementById("filterBtn");
+            if (filterBtn) filterBtn.addEventListener("click", applyFilters);
+
+            // Live update on checkbox toggle
+            document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(cb => {
+                cb.addEventListener("change", applyFilters);
+            });
+
+            // Reset
+            const resetBtn = document.getElementById("resetFilters");
+            if (resetBtn) {
+                resetBtn.addEventListener("click", () => {
+                    document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(cb => cb.checked = false);
+                    applyFilters();
+                });
+            }
+
+            // Apply filters on page load
+            document.addEventListener('DOMContentLoaded', applyFilters);
+        })();
+    </script>
 </body>
 
 </html>

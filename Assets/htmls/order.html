@@ -15,9 +15,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--CSS Main-->
     <link rel="stylesheet" href="./../styles/styles.css">
-    <script defer src="./../script/script.js"></script>
-
-
+    <style>
+        /* Add some basic styling for dynamic elements */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,19 +70,17 @@
             </div>
         </div>
     </div>
-    <div style="padding: 40px;">
+    <div style="padding: 40px;" id="breadcrumb">
         Shop > OKAZU Lovers Set (230ml/12 jars)
     </div>
     <div class="order-container">
         <div style="width: 20%;">
-            <img src="./../Images/Noodle.png" alt="" style="width:100%;">
+            <img id="product-image" src="./../Images/Noodle.png" alt="" style="width:100%;">
         </div>
-        <div>
-            <div style="font-weight: 600; font-size: 50px;">
-                <center>Noodles</center>
-            </div><br>
-            <div>
-                <center>$127.00<del>167.87</del></center>
+        <div class="product-info">
+            <h1 id="product-title" class="product-title">Noodles</h1>
+            <div id="product-price" class="product-price">
+                $127.00<del>167.87</del>
             </div>
             <div>
                 <div class="rating" style="text-align: center; display: flex; justify-content: center;">
@@ -70,12 +89,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <p>|32 reviews</p>
+                    <p>| <span id="review-count">32</span> reviews</p>
                 </div>
                 <div>
-                    <p>Your new cooking BFF! You can add this to virtually everything. Try it on <br>rice, on meat or
-                        tofu,
-                        in your burger, ramen and pretty much anything.</p>
+                    <p id="product-short-desc" class="product-description">Your new cooking BFF! You can add this to virtually everything. Try it on <br>rice, on
+                        meat or tofu, in your burger, ramen and pretty much anything.</p>
                 </div><br>
                 <div class="addToCartBuyNowContainer">
                     <button class="addToCartBuyNow bthhover" style="background-color: white;">Add to Cart</button>
@@ -97,17 +115,14 @@
     </div>
     <section style="background-color: #F9F9F9F9;">
         <div style="width: 100%; display: flex; justify-content: space-around;">
-            <h4 style="text-decoration: underline;">DECRIPTION</h4>
-            <h4>REVEWS</h4>
+            <h4 style="text-decoration: underline;">DESCRIPTION</h4>
+            <h4>REVIEWS</h4>
             <h4>VIDEOS</h4>
             <h4>COMMENTS</h4>
         </div><br><br>
-        <p style="padding: 15px;">Your new cooking BFF! You can add this to virtually everything. Try it on rice, on
-            meat or tofu, in your
-            burger, ramen and pretty much anything. These award winning products will have your taste buds <br>lingering
-            for
-            more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil
-            based
+        <p id="product-full-description" style="padding: 15px;">Your new cooking BFF! You can add this to virtually everything. Try it on rice, on
+            meat or tofu, in your burger, ramen and pretty much anything. These award winning products will have your taste buds <br>lingering
+            for more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil based
             condiment often eaten with rice in Japan, which can also be used to top chicken, burgers, fish, eggs,
             potatoes, and more.<br> Use it as a marinade or as an ingredient in your own homemade salad dressing, this
             condiment is versatile and we encourage you to experiment.<br> OKAZU gained an initial following at farmers'
@@ -120,7 +135,6 @@
             OKAZU CONTAINS: SESAME, SOYBEANS, MUSTARD. <br><br>INGREDIENTS: PRODUCT SEPARATION IS NORMAL. REFRIGERATE
             AFTER
             OPENING Made in Toronto, Ontario</p>
-
     </section>
     <div class="footer" style="position: relative;">
         <table
@@ -165,8 +179,98 @@
         </div>
         <div style="background-color: #0C3322; color: white;" class="footerIcons">
             &copy; 2021 Abolichi
+            
         </div>
     </div>
+
+    <script>
+        // Product database - this would contain all product information
+        const products = {
+            'jar': {
+                id: 'jar',
+                name: 'Jar (100g)',
+                image: './../Images/JAR.png',
+                price: '$127.00',
+                originalPrice: '$167.87',
+                reviews: 32,
+                shortDescription: 'Your new cooking BFF! You can add this to virtually everything. Try it on rice, on meat or tofu, in your burger, ramen and pretty much anything.',
+                fullDescription: `Your new cooking BFF! You can add this to virtually everything. Try it on rice, on meat or tofu, in your burger, ramen and pretty much anything. These award winning products will have your taste buds lingering for more...and potentially create an addiction.<br><br>
+                Chili OKAZU is an umami-rich chili, miso, and sesame oil based condiment often eaten with rice in Japan, which can also be used to top chicken, burgers, fish, eggs, potatoes, and more.<br><br>
+                Use it as a marinade or as an ingredient in your own homemade salad dressing, this condiment is versatile and we encourage you to experiment. OKAZU gained an initial following at farmers' markets in Toronto and has been featured in The Toronto Star, The National Post, Toronto Life, FoodiePages and a winner of the Foodie Pick Awards.`
+            },
+            'jars': {
+                id: 'jars',
+                name: 'Jar from the market',
+                image: './../Images/JARS.png',
+                price: '$137.00',
+                originalPrice: '$177.87',
+                reviews: 28,
+                shortDescription: 'Premium quality jars perfect for storing all your kitchen essentials and spices.',
+                fullDescription: `Premium quality jars perfect for storing all your kitchen essentials and spices. These beautifully crafted jars are both functional and decorative, adding a touch of elegance to your kitchen.<br><br>
+                Made from high-quality glass with airtight seals, these jars keep your ingredients fresh for longer. Perfect for storing spices, herbs, teas, and other dry goods. The uniform size makes for easy stacking and organization in your pantry.<br><br>
+                Each jar is carefully inspected to ensure the highest quality standards. The minimalist design complements any kitchen decor style from modern to rustic.`
+            },
+            'masala': {
+                id: 'masala',
+                name: 'Spicy Masala Mix',
+                image: './../Images/MASALA PIC.png',
+                price: '$127.00',
+                originalPrice: '$167.87',
+                reviews: 45,
+                shortDescription: 'Authentic blend of spices that will transform your cooking with rich, aromatic flavors.',
+                fullDescription: `Authentic blend of spices that will transform your cooking with rich, aromatic flavors. Our masala mix is carefully crafted using traditional recipes passed down through generations.<br><br>
+                Each batch is made from the finest quality spices sourced directly from farmers. We use no artificial preservatives or colors, ensuring you get the purest flavor experience.<br><br>
+                This versatile masala can be used in curries, marinades, rubs, and even as a seasoning for snacks. The balanced blend of 15 different spices creates a complex flavor profile that enhances without overpowering your dishes.`
+            },
+            'matcha': {
+                id: 'matcha',
+                name: 'Matcha Green Tea',
+                image: './../Images/ABO MAT CHA.png',
+                price: '$145.00',
+                originalPrice: '$189.99',
+                reviews: 52,
+                shortDescription: 'Premium ceremonial grade matcha powder from the shaded tea fields of Japan.',
+                fullDescription: `Premium ceremonial grade matcha powder from the shaded tea fields of Japan. Our matcha is stone-ground to preserve its vibrant color, rich umami flavor, and nutritional benefits.<br><br>
+                Grown in the Uji region of Kyoto, our matcha leaves are shade-grown for three weeks before harvest to increase chlorophyll content and develop the signature sweet flavor. Only the finest first-harvest leaves are selected for our ceremonial grade matcha.<br><br>
+                This versatile powder can be prepared traditionally as tea, used in lattes, or incorporated into baking and cooking. Each tin contains enough matcha for approximately 30 servings.`
+            }
+        };
+
+        // Function to get URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                product: params.get('product') || 'noodles' // Default to noodles if no parameter
+            };
+        }
+
+        // Function to update the page with product information
+        function updateProductPage(productId) {
+            const product = products[productId];
+            
+            if (!product) {
+                console.error('Product not found:', productId);
+                return;
+            }
+
+            // Update page elements
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.name;
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-price').innerHTML = `${product.price} <del>${product.originalPrice}</del>`;
+            document.getElementById('review-count').textContent = product.reviews;
+            document.getElementById('product-short-desc').textContent = product.shortDescription;
+            document.getElementById('product-full-description').innerHTML = product.fullDescription;
+            document.getElementById('breadcrumb').textContent = `Shop > ${product.name}`;
+            document.title = `Order - ${product.name}`;
+        }
+
+        // Initialize the page when it loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = getUrlParams();
+            updateProductPage(params.product);
+        });
+    </script>
 </body>
 
 </html>

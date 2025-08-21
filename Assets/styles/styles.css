@@ -4,6 +4,15 @@
     font-family: raleway;
 
 }
+.grow-hover {
+  transition: transform 0.3s ease;
+}
+
+.grow-hover:hover {
+  transform: scale(1.03);
+  /*box-shadow: 0px 0px 1000px 0px black;*/
+  cursor: pointer;
+}
 
 .first-taskbar {
     width: 100%;
@@ -222,32 +231,51 @@
 
 
 /*Card*/
-.card {
-    width: 250px;
-    height: 75vh;
-    border: 0.5px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 0px 2px 0px black;
+.product-row {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
 }
 
-.cardImg {
-    width: 100%;
-    padding-top: 30px;
+.product-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.carddetailsDiv {
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 50px;
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 60vh;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 One reusable hover class */
+.product-card:hover {
+  transform: scale(1.03); /* increases by 3% */
+}
+
+.product-img img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-details {
+  margin-top: 8px;
 }
 
 .rating {
-    display: flex;
-    padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #f5a623; /* gold stars */
 }
+
 
 
 
