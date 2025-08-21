@@ -22,17 +22,17 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .product-title {
             font-weight: 600;
             font-size: 50px;
             margin-bottom: 10px;
         }
-        
+
         .product-price {
             margin-bottom: 15px;
         }
-        
+
         .product-description {
             text-align: center;
             margin-bottom: 20px;
@@ -92,12 +92,13 @@
                     <p>| <span id="review-count">32</span> reviews</p>
                 </div>
                 <div>
-                    <p id="product-short-desc" class="product-description">Your new cooking BFF! You can add this to virtually everything. Try it on <br>rice, on
+                    <p id="product-short-desc" class="product-description">Your new cooking BFF! You can add this to
+                        virtually everything. Try it on <br>rice, on
                         meat or tofu, in your burger, ramen and pretty much anything.</p>
                 </div><br>
                 <div class="addToCartBuyNowContainer">
                     <button class="addToCartBuyNow bthhover" style="background-color: white;">Add to Cart</button>
-                    <a href="./orderPlaced.html"><button class="addToCartBuyNow bthhover"
+                    <a href="./orderPlaced.html"><button class="buyNow bthhover"
                             style="background-color: black; color: white;">Buy now</button></a>
                 </div><br>
                 <div style="display: flex; justify-content: center;">
@@ -120,9 +121,12 @@
             <h4>VIDEOS</h4>
             <h4>COMMENTS</h4>
         </div><br><br>
-        <p id="product-full-description" style="padding: 15px;">Your new cooking BFF! You can add this to virtually everything. Try it on rice, on
-            meat or tofu, in your burger, ramen and pretty much anything. These award winning products will have your taste buds <br>lingering
-            for more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil based
+        <p id="product-full-description" style="padding: 15px;">Your new cooking BFF! You can add this to virtually
+            everything. Try it on rice, on
+            meat or tofu, in your burger, ramen and pretty much anything. These award winning products will have your
+            taste buds <br>lingering
+            for more...and potentially create an addiction.<br> Chili OKAZU is an umami-rich chili, miso, and sesame oil
+            based
             condiment often eaten with rice in Japan, which can also be used to top chicken, burgers, fish, eggs,
             potatoes, and more.<br> Use it as a marinade or as an ingredient in your own homemade salad dressing, this
             condiment is versatile and we encourage you to experiment.<br> OKAZU gained an initial following at farmers'
@@ -170,16 +174,27 @@
     </div>
     <div class="bottomFooter">
         <div style="background-color: #0C3322;" class="footerIcons">
-            <i class="fa-brands fa-facebook" style="color: white;"></i>
-            <i class="fa-brands fa-twitter" style="color: white;"></i>
-            <i class="fa-brands fa-instagram" style="color: white;"></i>
-            <i class="fa-brands fa-youtube" style="color: white;"></i>
-            <i class="fa-brands fa-pinterest" style="color: white;"></i>
-            <i class="fa-brands fa-linkedin" style="color: white;"></i>
+            <a href="https://www.facebook.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-facebook" style="color: white;"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-twitter" style="color: white;"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-instagram" style="color: white;"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-youtube" style="color: white;"></i>
+            </a>
+            <a href="https://www.pinterest.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-pinterest" style="color: white;"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="grow-hover">
+                <i class="fa-brands fa-linkedin" style="color: white;"></i>
+            </a>
         </div>
         <div style="background-color: #0C3322; color: white;" class="footerIcons">
             &copy; 2021 Abolichi
-            
         </div>
     </div>
 
@@ -247,7 +262,7 @@
         // Function to update the page with product information
         function updateProductPage(productId) {
             const product = products[productId];
-            
+
             if (!product) {
                 console.error('Product not found:', productId);
                 return;
@@ -266,10 +281,24 @@
         }
 
         // Initialize the page when it loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const params = getUrlParams();
             updateProductPage(params.product);
         });
+        // --- CART FUNCTIONALITY ---
+        let cartCount = 0;
+        const cartCountSpan = document.getElementById("cart-count");
+
+        // Attach to all buttons
+        document.querySelectorAll(".addToCartBuyNow").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                cartCount++;
+                cartCountSpan.textContent = cartCount;
+            });
+        });
+
+
     </script>
 </body>
 

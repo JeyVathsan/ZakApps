@@ -34,17 +34,17 @@
                 <img src="./../Images/logo.png" alt="Company Logo" class="logo">
             </div>
             <div class="shopOurStoryRecContact">
-                <div>Shop
+                <div class="grow-hover">Shop
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div>Our Story</div>
-                <div>Receipies</div>
-                <div>Contact</div>
+                <div class="grow-hover">Our Story</div>
+                <div class="grow-hover">Receipies</div>
+                <div class="grow-hover">Contact</div>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: space-around; width: 15%;">
-                <i class="fa-solid fa-magnifying-glass" style="color: black;" aria-label="Search"></i>
-                <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
-                <i class="fa-solid fa-cart-shopping" aria-label="Shopping Cart"></i>
+                <i class="fa-solid fa-magnifying-glass grow-hover" style="color: black;" aria-label="Search"></i>
+                <i class="fa-regular fa-heart grow-hover" aria-label="Wishlist"></i>
+                <i class="fa-solid fa-cart-shopping grow-hover" aria-label="Shopping Cart"></i>
             </div>
         </div>
         <div style="width: 100%;">
@@ -56,14 +56,14 @@
         <div class="filterDiv">
             <div class="filter">
                 <div class="filterListMenu">
-                    <button class="btnfilter">Filter</button>
-                    <button id="resetFilters" class="btnfilter" type="button">Reset</button>
-                    <i class="fa-solid fa-table-cells" style="font-size: 25px;" aria-label="Grid view"></i>
-                    <i class="fa-solid fa-list-ul" style="font-size: 25px;" aria-label="List view"></i>
+                    <button class="btnfilter grow-hover">Filters</button>
+                    <button id="resetFilters" class="btnfilter grow-hover" type="button">Reset</button>
+                    <i class="fa-solid fa-table-cells grow-hover" style="font-size: 25px;" aria-label="Grid view"></i>
+                    <i class="fa-solid fa-list-ul grow-hover" style="font-size: 25px;" aria-label="List view"></i>
                 </div>
                 <div>
                     Sort By &nbsp; | &nbsp; <div class="dropdown">
-                        <button class="dropbtn">Alphabatically A-Z &nbsp; <i
+                        <button class="dropbtn grow-hover">Alphabatically A-Z &nbsp; <i
                                 class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <a href="#">Latest</a>
@@ -81,8 +81,9 @@
             <div class="filter-group" data-key="category">
                 <h3 class="filter-title">Categories</h3>
                 <ul class="options">
-                    <li><label><input type="checkbox" name="category" value="noodles"> <span>Noodles</span></label></li>
-                    <li><label><input type="checkbox" name="category" value="jars"> <span>Jars</span></label></li>
+                    <li><label><input type="checkbox" name="category" value="noodles"> <span>Dozen Jars</span></label>
+                    </li>
+                    <li><label><input type="checkbox" name="category" value="jars"> <span>Jar</span></label></li>
                     <li><label><input type="checkbox" name="category" value="masala"> <span>Masala</span></label></li>
                     <li><label><input type="checkbox" name="category" value="matcha"> <span>Matcha</span></label></li>
                 </ul>
@@ -107,10 +108,7 @@
                 </ul>
             </div>
 
-            <div style="margin-top:10px; display:flex; gap:8px; align-items:center;">
-                <button id="filterBtn" class="btnfilter">Filter</button>
-                
-            </div>
+
         </div>
 
         <!---Card Starts---->
@@ -273,7 +271,7 @@
                 </div>
             </a>
         </div>
-        
+
 
         <!-- Repeat your other product rows with added data attributes -->
 

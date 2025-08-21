@@ -5,7 +5,7 @@
 
 }
 .grow-hover {
-  transition: transform 0.3s ease;
+  transition: transform 0.01s ease;
 }
 
 .grow-hover:hover {
@@ -196,6 +196,12 @@
 }
 
 .addToCartBuyNow {
+    width: 120px;
+    height: 7vh;
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
+.buyNow{
     width: 120px;
     height: 7vh;
     border: 0.5px solid black;
